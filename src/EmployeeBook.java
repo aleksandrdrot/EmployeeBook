@@ -59,19 +59,11 @@ public class EmployeeBook {
             er.error1();
             start();
         }else {
-            int index = 0;
-            while (index < arrlength){
-                if (employee[index] == null){
-                    Employee newEmployee = new Employee(firstName,lastName,middleName,salary,department);
-                    employee[count++] = newEmployee;
-                    break;
-                }else {
-                    index++;
-                    if (index == arrlength) {
-                        er.error2();
-                        start();
-                    }
-                }
+            Employee newEmployee = new Employee(firstName,lastName,middleName,salary,department);
+            employee[count++] = newEmployee;
+            if (count == arrlength) {
+                er.error2();
+                start();
             }
         }
         System.out.println("\n Сотрудник добавлен! \n");
